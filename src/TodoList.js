@@ -1,19 +1,13 @@
-import { Checkbox } from "@mui/material";
-import { useState } from "react";
 import React from "react";
-const TodoList = ({ id, name, completed }) => {
-  const [comp, setComp] = useState(completed);
-  function changeMe() {
-    setComp(!comp);
-  }
+import TodoItem from "./TodoItem";
+const TodoList = ({ id, name, remover }) => {
+  
   return (
     <div>
-      <ul>
-        <li key={id} style={!comp ? { color: "lightgrey" } : {}}>
-          Task:{name}
-        </li>
-        <Checkbox onClick={changeMe} />
-      </ul>
+      <TodoItem id={id}
+       name={name} 
+       completed={false} 
+       deleting={remover} />
     </div>
   );
 };

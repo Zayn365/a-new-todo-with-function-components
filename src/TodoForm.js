@@ -1,34 +1,23 @@
-import React from "react";
-import { useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import UseStateValue from "./hooks/UseSetValue";
 import TodoList from "./TodoList";
 
-const arr = [{
-    id: '',
-    name: '',
-    completed: false
-}];
+// const Val = [
+//   {id: 1, name: 'zain', complete: false},
+//   {id: 2, name: 'zain1', complete: false},
+//   {id: 3, name: 'zain2', complete: false}];
 const TodoForm = () => {
-  const [task, setTask] = useState("");
-  function handleVal(e) {
-    setTask(e.target.value);
-  }
-  function Clicker(){
-    arr.push({
-        id: uuidv4(),
-        name: task
-    })
-  }
- console.log(arr)
+const [task, list, handleSubmit, handleVal, remover ] = UseStateValue([]);
+
+  console.log(() => remover)
   return (
     <div
       style={{
         display: "inline-block",
-        textAlign: 'center',
-        width: '100vw',
+        textAlign: "center",
+        width: "100vw",
       }}
     >
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           value={task}
@@ -36,10 +25,19 @@ const TodoForm = () => {
           placeholder="Give Task!"
         />
         <br />
-        <button type="submit" onClick={Clicker}>Submit</button>
+        <button type="submit" >
+          Submit
+        </button>
       </form>
       <br />
-      <TodoList id={arr.id} name={arr.name} completed={true} />
+      {list.map((item,key) => {
+        return( <TodoList 
+         id={item.id} 
+         name={item.name}
+         key={key} 
+         remover={remover} />) 
+      })}
+      
     </div>
   );
 };
