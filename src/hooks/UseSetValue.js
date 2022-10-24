@@ -23,8 +23,16 @@ function UseStateValue (intialVal) {
     const updateList = list.filter(list => list.id !== todoId);
      setList(updateList);
   };
+
+  const uploader = (todoId , todoName) => {
+
+    const updateList = list.map(list => { 
+    return  list.id === todoId ? {...list , name: todoName} : list
+  })
+     setList(updateList);
+  }
   
-      return [task, list, handleSubmit, handleVal, remover ];
+      return [task, list, handleSubmit, handleVal, remover, uploader ];
 
 }
 

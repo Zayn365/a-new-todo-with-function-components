@@ -1,6 +1,7 @@
 import React from 'react';
 import { Paper, AppBar, Typography, Toolbar, Grid } from '@mui/material';
 import TodoForm from './TodoForm';
+import './styles.css';
 const TodoApp = () => {
   return (
     <div>
