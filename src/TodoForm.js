@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import UseStateValue from "./hooks/UseSetValue";
 import TodoList from "./TodoList";
 
+
 const Val = JSON.parse(window.localStorage.getItem("list") || [])
 // const Val = [
 //   {id: 1, name: 'zain', complete: false},
@@ -29,7 +30,7 @@ useEffect(() => {
           placeholder="Give Task!"
         />
         <br />
-      </form>
+      </form> 
       <br />
       {list.map((item,key) => {
         return( <TodoList 

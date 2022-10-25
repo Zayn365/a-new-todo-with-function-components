@@ -1,23 +1,14 @@
 import React from 'react';
-import { Paper, AppBar, Typography, Toolbar, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
 import TodoForm from './TodoForm';
 import './styles.css';
 const TodoApp = () => {
   return (
     <div>
-        <Paper style={{
-            padding: "0",
-            backgroundColor: "white",
-            height: "100vh",
-            margin: "0"
-        }}>
-          <AppBar position = "static" color='primary' style={{ height: "64px"}}>
-            <Toolbar>
-                <Typography>TodoApp</Typography> 
-            </Toolbar>
-          </AppBar>
+      
+   
+           <h1>TodoApp</h1>
           <Grid><TodoForm /></Grid>
-        </Paper>
     </div>
   )
 }

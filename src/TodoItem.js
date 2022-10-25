@@ -28,7 +28,8 @@ const TodoItem = ({ id, name, completed, deleting, update }) => {
         </div>
       ) : (
         <div className="todos" 
-        style={{display: 'flex', justifyContent: 'space-around'}}>
+        style={{display: 'flex', justifyContent: 'space-between'}}>
+          
           <Checkbox
             onClick={changeMe}
             sx={{
@@ -41,12 +42,14 @@ const TodoItem = ({ id, name, completed, deleting, update }) => {
           <li key={id} className={comp ? "completed" : {}}>
             {name}
           </li>
+          <div>
           <IconButton onClick={() => deleting(id)}>
             <DeleteOutlineIcon style={{ color: "darkred" }} />
           </IconButton>
           <IconButton>
             <TaskIcon style={{ color: "darkgreen" }} onClick={changerMe} />
           </IconButton>
+          </div>
         </div>
       )}
     </div>
